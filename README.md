@@ -12,8 +12,7 @@
     - Multi-line `"""comment here"""` - not used
   
 - Variables
-  - Used for storing variable data, this means data that can change. 
-  - 
+  - Used for storing variable data, this means data that can change.  
   ```
   age = 28
   name, age, location = "Mike", 28, "Bath"
@@ -71,7 +70,7 @@ EXERCISE?
   - else: a one time completion block after `while` or `for` - not executed after a `break`
   
 ### EXERCISE:
-  ```
+```
 Write a short program that prints each number from 1 to 100 on a new line. 
 For each multiple of 3, print "Fizz" instead of the number. 
 For each multiple of 5, print "Buzz" instead of the number. 
