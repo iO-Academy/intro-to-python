@@ -18,11 +18,11 @@
   age = 28
   name, age, location = "Mike", 28, "Bath"
   ```
- - Must start with a letter or the underscore character 
- - Cannot start with a number
- - Alpha-numeric characters and underscores (A-z, 0-9, and _ )
- - Case-sensitive
- - Generally lowercase with underscores
+  - Must start with a letter or the underscore character 
+  - Cannot start with a number
+  - Alpha-numeric characters and underscores (A-z, 0-9, and _ )
+  - Case-sensitive
+  - Generally lowercase with underscores
 - Constants?
 
 - Data Types
