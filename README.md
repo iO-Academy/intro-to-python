@@ -3,6 +3,7 @@
 - What is Python?
   - Syntax
   - Comments
+    - Single line / Multi-line
   
 
 - Variables
