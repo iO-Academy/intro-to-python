@@ -37,7 +37,7 @@
   ```
 
 - Data Types
-  - Simple: str, ing, float, bool
+  - Simple: str, ing, float, bool (True, False)
   - Other:
     - [range](https://www.w3schools.com/python/ref_func_range.asp): a list of numbers starting from 0
     - Casting: `str()`,`int()`,`float()`
@@ -166,11 +166,85 @@ for number in range(1, 100):
 ```
  
 - Functions
-  - Scope
-  - https://www.w3schools.com/python/python_variables_global.asp
+  ```
+  def do_thing(arg):
+    print("doing a thing with " + arg)
+    
   
-- Sorting
+  do_thing("stuff")
+  ```
+  - PEP-8: lowercase and _, 2 Line breaks after a function
+  - `*args` - tuple of args for unknown amount
+  - `**args` - dict of args for unknown args
+  - `arg = 'value'` for default values
+  - `return` to return values
+  - Lambda/anonymous functions can be assigned to variables, with unlimited params and 1 expression
+  ```
+  sum = lambda a, b : a * b
+  print(sum(4, 5)) # 20 
+  ```
 
+  - Scope
+    - functional scope
+    - global variables inherit from call
+  - https://www.w3schools.com/python/python_variables_global.asp
+
+- Modules
+  - Import files into your code to achieve better separation
+  ```
+  import example # example.py
+  from example import do_thing # do_thing function in example.py
+  import services.example # services/example.py
+  import services.example as example # alias to make using it easier
+  ```
+  - Generally architectures are applied by frameworks, for most scripts try to build all functions into a module, grouping similar functions the import those modules when needed
+
+- Sorting
+  - `sort()` method of a list will sort ascending or alphabetically
+  - `sort(resever = True)` to sort descending
+  - `reverse()` reverse the current order
+  - `sort(key = function)` to sort by a function, will sort ASC or alphabetically depending whats returned
+  - Example, sort by key:
+  ```
+  def sort_by_age(person):
+    return person["age"]
+
+
+  people = [{"name": "Mike", "age": 28}, {"name": "Sarah", "age": 12}, {"name": "John", "age": 45}]
+
+  people.sort(key=sort_by_age)
+
+  print(people)
+  ```
+  
+- Package manager: PIP
+  - A package manager is an online repository of libraries written by other developers for you to use. Most things you want to do that are non-trivial there will be a package that can do it for you, and can do it better than you can do it
+  - Example, if you want to hash a password using [bcrypt](https://pypi.org/project/bcrypt/)
+  - Pay attention to Python version, and check release history to see when last updated. DO NOT USE OUTDATED PACKAGES.
+  ```
+  pip install [package]
+  pip list
+  ```
+  
+- Working with files
+  - You can work with text and binary files, we will just be working with text files
+  - `file = open("example.txt")` will open a file resource
+  - `open()` takes a optional second argument, "r", "a", "w" or "x" (create), "r" is default
+  - `file.read()` will read the entire content of a file, or `file.read(5)` to specify char count
+  - `file.readline()` to read the next line of a file
+  - `file.close()` to close the resource
+  - There is a built-in library for working with CSVs, the syntax is a bit long winded
+  ```
+  import csv
+
+  data = []
+  with open('data.csv') as file:
+    csv_data = csv.DictReader(file)
+    for row in csv_data:
+        data.append(row)
+
+  print(data) # will contain a list of dicts (ordered dicts but treat like a dict)
+  ```
   
 ### EXERCISE
 ``` 
