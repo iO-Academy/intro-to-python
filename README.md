@@ -280,6 +280,33 @@ for number in range(1, 100):
     - This is not a transaction, individual queries can fail without affecting others. It is just a loop.
 
 ### EXERCISE
+```
+TBC
+```
+#### ANSWER
+```
+```
+
+- OO Python
+  - Python is an OO language so technically all data types are just built-in classes, like JavaScript. To make classes:
+  ```
+  class Sheep:
+      def __init__(self, name, color):
+          self.name = name
+          self.color = color
+          
+          
+      def eat(self, food):
+          print(self.name + " is eating " + food)
+          
+          
+  dolly = Sheep("Dolly", "green")
+  dolly.eat("Grass") # Dolly is eating Grass
+  ```
+
+Homework:
+
+### EXERCISE
 ``` 
 Blackjack
 ```
