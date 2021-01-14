@@ -78,6 +78,7 @@ TBC
 
 - Operators
   - Math: ```+ - * / % ** (Exponential) // (floor division)```
+    - There alot more Math functions in the [Math module](https://www.w3schools.com/python/module_math.asp) and some [built into Python core](https://www.w3schools.com/python/python_math.asp)
   - Assignment: ```= += -= *= /=```
   - Comparison: ```== != > < >= <=```
   - Logical: ```and, or, not - not(x < 5 and x < 10)```
