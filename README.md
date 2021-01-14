@@ -37,7 +37,7 @@
   ```
 
 - Data Types
-  - Simple: str, ing, float, bool (True, False)
+  - Simple: str, int, float, bool (True, False), None
   - Other:
     - [range](https://www.w3schools.com/python/ref_func_range.asp): a list of numbers starting from 0
     - Casting: `str()`,`int()`,`float()`
@@ -62,14 +62,28 @@
     - Inserting at an index: ```names.insert(2, 'Felix')``` - inserts into index 2 and shunts values up
     - Append elements from one to another: ```names.extend(othernames)``` - can be a list, set, dict, tuple
     - Removing items: ```names.pop()``` - optional key argument. ```namess.remove("sarah") - remove first occurance of value
-    - Slicing: ```names[2:5]``` - third fourth and fifth (first inclusive, second exclusive)
+    - Slicing
+      - Slicing follows this rule: `list[start:stop:step]`
+      - Omit any of the 3 to use their default: start = 0, stop: last element, step = 1
+      - ```names[2:5]``` - third fourth and fifth (first inclusive, second exclusive)
       - Slicing can be used to override values: ``` names[2:3] = ['John', 'Jess'] ``` will replace 3rd value with 2 values and shunt other values up
   - [dict](https://www.w3schools.com/python/python_dictionaries_methods.asp)
     - Works like a assoc array in PHP
 
 ### EXERCISE
 ``` 
-TBC
+- Output the first and last name of each person in this data, each person on a different line:
+people = [{"firstname": "Mike", "lastname": "Oram"}, {"firstname": "Sarah", "lastname": "Jackson"}]
+
+- Add 7000 after 6000 is the following data:
+data = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
+
+- Replace the first occurance of the number 20 with the number 200 from the below list:
+data = [5, 10, 15, 20, 25, 50, 20]
+
+- Take the odd index items from list1 and the even index items from list2 and put them into a new list
+list1 = [3, 6, 9, 12, 15, 18, 21]
+list2 = [4, 8, 12, 16, 20, 24, 28]
 ```
 #### ANSWER
 ```
@@ -217,7 +231,23 @@ for number in range(1, 100):
 
   print(people)
   ```
-  
+ 
+- Filtering
+  - `filter()` function allows filtering of an iterable, you pass it a function and the data
+  - The function should return `True` to include and `False` to exclude
+  ```
+  data = [5, 12, 3, 34, 54, 17]
+
+
+  def is_odd(num):
+    return (num % 2) == 1
+
+
+  oddNumbers = list(filter(is_odd, data)) # cast to a list or you get an iterable which doesnt print well
+
+  print(oddNumbers)
+  ```
+ 
 - Package manager: PIP
   - A package manager is an online repository of libraries written by other developers for you to use. Most things you want to do that are non-trivial there will be a package that can do it for you, and can do it better than you can do it
   - Example, if you want to hash a password using [bcrypt](https://pypi.org/project/bcrypt/)
