@@ -229,10 +229,11 @@ for number in range(1, 100):
 - Working with files
   - You can work with text and binary files, we will just be working with text files
   - `file = open("example.txt")` will open a file resource
-  - `open()` takes a optional second argument, "r", "a", "w" or "x" (create), "r" is default
+  - `open()` takes a optional second argument, "r", "a", "w" (deleted file contense) or "x" (create), "r" is default
   - `file.read()` will read the entire content of a file, or `file.read(5)` to specify char count
   - `file.readline()` to read the next line of a file
   - `file.close()` to close the resource
+  - `file.write("content")` to write to a file opened using "w" or "a"
   - There is a built-in library for working with CSVs, the syntax is a bit long winded
   ```
   import csv
@@ -245,7 +246,39 @@ for number in range(1, 100):
 
   print(data) # will contain a list of dicts (ordered dicts but treat like a dict)
   ```
+  - Writing to CSVs is pretty much the same
+  ```
+  import csv
   
+  with open('data.csv', mode='w') as file:
+    file_data = csv.writer(file, deliimiter=',', quotechar='"')
+    file_data.writerow(['list', 'of', 'data', 'to', 'write'])
+  ```
+  - Generally using the CSV library is not recommended, pandas is much easier
+  ```
+  import pandas
+  data = pandas.read_csv('data.csv')
+  ```
+
+- Working with MSSQL
+  - Connect using pyodbc library
+  - `pip install pyodbc`
+  - Connecting varies between environments:
+    - [Windows](https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-Windows)
+    - [Mac](https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-SQL-Server-from-Mac-OSX)
+  - Once connected you use `conn.cursor()` to start a new query
+  ```
+  db = conn.cursor()
+  db.execute('SELECT * FROM {dbname}.dbo.{tablename}')
+  rows = db.fetchall() # gets all rows
+  row = db.fetchone() # gets next row
+  ```
+  - Can be shorted to: `db.execute({query}).fetchall()`
+  - can grab counts using: `db.execute({query}).rowcount`
+  - Prepared statements only offer anonymous placeholders: `db.execute('SELECT * FROM {dbname}.dbo.{tablename} WHERE id = ?', id)`: the data is provided as additional arguments to execute in the correct order.
+  - To run multiple queries with different data, use `db.executemany({query}, [(1), (2)])`: second argument should be a list of lists/tuples
+    - This is not a transaction, individual queries can fail without affecting others. It is just a loop.
+
 ### EXERCISE
 ``` 
 Blackjack
