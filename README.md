@@ -3,7 +3,7 @@
 - What is Python?
   - Syntax
     - Whitespace (spaces not tabs). Python is a whitespace based language, this means it defines blocks of code using indentation, or whitespace, rather than by using brackets. Most languages are either bracket based or whitespace based, in order to define different blocks of code.
-    - Modules: Python has a long list of [built-in modules](https://docs.python.org/3/library/), basically this is library code. yiu can create your own modules but will get to that later. To use a module:
+    - Modules: Python has a long list of [built-in modules](https://docs.python.org/3/library/), basically this is library code. You can create your own modules but will get to that later. To use a module:
     ``` import {modulename} ```
     You can also import functions from modules:
     ```from {modulename} import {function}```
