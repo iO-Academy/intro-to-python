@@ -232,6 +232,7 @@ for number in range(1, 100):
   - `*args` - tuple of args for unknown amount
   - `**args` - dict of args for unknown args
   - `arg = 'value'` for default values
+  - Arguments can be passed by specifying the param name: `func(param1 = "value")` often called `kwargs`
   - `return` to return values
   - Lambda/anonymous functions can be assigned to variables, with unlimited params and 1 expression
   ```
@@ -288,6 +289,26 @@ for number in range(1, 100):
   print(oddNumbers)
   ```
  
+### EXERCISE
+```
+Remove all under 18s from the following data:
+people = [
+    {"name": "Mike", "age": 28},
+    {"name": "Jenny", "age": 12},
+    {"name": "Sarah", "age": 21},
+    {"name": "Robert", "age": 6},
+    {"name": "Felix", "age": 41}
+]
+```
+#### ANSWER
+```
+def is_adult(person):
+    return person['age'] > 17
+
+
+adults = list(filter(is_adult, people))
+```
+ 
 - Package manager: PIP
   - A package manager is an online repository of libraries written by other developers for you to use. Most things you want to do that are non-trivial there will be a package that can do it for you, and can do it better than you can do it
   - Example, if you want to hash a password using [bcrypt](https://pypi.org/project/bcrypt/)
@@ -325,7 +346,7 @@ for number in range(1, 100):
     file_data = csv.writer(file, deliimiter=',', quotechar='"')
     file_data.writerow(['list', 'of', 'data', 'to', 'write'])
   ```
-  - Generally using the CSV library is not recommended, pandas is much easier
+  - Generally using the CSV library is not recommended, pandas is much easier. John will teach you more about working with pandas.
   ```
   import pandas
   data = pandas.read_csv('data.csv')
@@ -423,7 +444,9 @@ print(person) # (65, 'Daisy', 'Gravenall', 'dgravenall1s@twitpic.com', 'Thoughtb
   dolly.eat("Grass") # Dolly is eating Grass
   ```
 
-Homework:
+
+
+Additional exercise:
 
 ### EXERCISE
 ``` 
