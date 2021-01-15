@@ -352,10 +352,52 @@ for number in range(1, 100):
 
 ### EXERCISE
 ```
-TBC
+Create a module with the following functions:
+- get_people_by_company
+- get_person_by_id
+Each function should query the database using the function parameter, and return the data
+
+Use your functions to find:
+- All the people who work for Babbleblab
+- The person with id 65
 ```
 #### ANSWER
 ```
+# module
+import pyodbc
+
+conn = pyodbc.connect(
+    server="localhost",
+    database="test",
+    user='sa',
+    tds_version='7.4',
+    password="Password123",
+    port=1433,
+    driver='/usr/local/lib/libtdsodbc.so'
+)
+
+
+def get_people_by_company(company):
+    db = conn.cursor()
+    db.execute('SELECT * FROM test.dbo.people WHERE company = ?', company)
+    return db.fetchall()
+
+
+def get_person_by_id(person_id):
+    db = conn.cursor()
+    db.execute('SELECT * FROM test.dbo.people WHERE id = ?', person_id)
+    return db.fetchone()
+
+
+# index
+
+import module
+
+people = module.get_people_by_company('Babbleblab')
+print(people)
+
+person = module.get_person_by_id(65)
+print(person)
 ```
 
 - OO Python
