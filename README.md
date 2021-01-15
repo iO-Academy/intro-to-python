@@ -291,7 +291,7 @@ for number in range(1, 100):
  
 ### EXERCISE
 ```
-Remove all under 18s from the following data:
+Output the names of the adults in age order (ASC):
 people = [
     {"name": "Mike", "age": 28},
     {"name": "Jenny", "age": 12},
@@ -307,6 +307,18 @@ def is_adult(person):
 
 
 adults = list(filter(is_adult, people))
+
+
+def sort_by_age(person):
+    return person["age"]
+    
+
+adults.sort(key=sort_by_age)
+
+for adult in adults:
+    print(adult['name'])
+    
+# Sarah, Mike, Felix
 ```
  
 - Package manager: PIP
