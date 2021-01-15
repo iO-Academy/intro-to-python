@@ -164,6 +164,7 @@ people = [
   - Running mulitple queries
   
 ### EXERCISE
+Use [this database](people.sql)
 ```
 Create a module with the following functions:
 - get_people_by_company
