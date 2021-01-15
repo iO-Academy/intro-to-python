@@ -451,6 +451,17 @@ Additional exercise:
 ### EXERCISE
 ``` 
 Blackjack
+Write a blackjack like game. The game will randomly "draw" 4 cards, assign 2 to the player and 2 to the dealer. Calculate the score the player and the dealer got, the higher score wins, unless the score is over 21 in which case they "go bust" and the other player wins. If the scores are equal, it is a draw and neither player wins.
+- Number cards are worth their numerical value
+- Jack, Queen and King are worth 10
+- Ace is worth 11
+You must output the cards drawn by each player.
+No card can be drawn more than once.
+
+Stretch goal:
+If the players score is under 21, ask them if they would like to draw another card. If they do, add the card value to their score. Allow the player to continue drawing cards until their score is 21 or they go bust.
+
+
 ```
 #### ANSWER
 ```
