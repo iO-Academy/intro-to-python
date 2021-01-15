@@ -182,6 +182,7 @@ Use your functions to find:
   
 Additional reading:
   - [W3Schools](https://www.w3schools.com/python/default.asp)
+  - [Python Exercises](https://pynative.com/python-exercises-with-solutions/)
   - [Real Python](https://realpython.com/)
   - [Learn Python](https://www.learnpython.org/)
   - [Python Docs](https://docs.python.org/3/)
