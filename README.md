@@ -41,7 +41,20 @@
   - Other:
     - [range](https://www.w3schools.com/python/ref_func_range.asp): a list of numbers starting from 0
     - Casting: `str()`,`int()`,`float()`
-    - EXERCISE
+### EXERCISE
+```
+Write a script that asks the user for their name and age as 2 separate questions. 
+Then print the following string with the correct data:
+{name} will be {age} years old next year
+```
+
+#### ANSWER
+```
+name = input('What is your name?\n')
+age = input('How old are you?\n')
+print(name + ' will be ' + str(int(age)+1) + ' years old next year')
+```
+
   - Complex: `list`, `tuple`, `dict`, `set`
     - 4 data types that allow for storing multiple values (array), all can contain any data type
       - list: ordered, changeable, 0 indexed, allows dups 
@@ -149,8 +162,8 @@ When given a length, the calculator must create a fence that spans atleast that 
 Stretch goals:
 Display how many spare posts/railings there are when calculating the fence length
 Display the overshoot when calculating how many posts and railings are needed for a fence length
-
 ```
+
 #### ANSWER
 ```
 import math
@@ -200,14 +213,15 @@ else:
   - continue - skip current iteration
   - else: a one time completion block after `while` or `for` - not executed after a `break`
   
-### EXERCISE:
+### EXERCISE
 ```
 Write a short program that prints each number from 1 to 100 on a new line. 
 For each multiple of 3, print "Fizz" instead of the number. 
 For each multiple of 5, print "Buzz" instead of the number. 
 For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
 ```
-#### ANSWER:
+
+#### ANSWER
 ```
 for number in range(1, 100):
     if number % 3 == 0 and number % 5 == 0:
@@ -291,7 +305,7 @@ for number in range(1, 100):
  
 ### EXERCISE
 ```
-Output the names of the adults in age order (ASC):
+Output the names of the adults (18 and over) in age order (ASC):
 people = [
     {"name": "Mike", "age": 28},
     {"name": "Jenny", "age": 12},
@@ -300,6 +314,7 @@ people = [
     {"name": "Felix", "age": 41}
 ]
 ```
+
 #### ANSWER
 ```
 def is_adult(person):
@@ -476,8 +491,7 @@ Stretch goal:
 If the players score is under 21, ask them if they would like to draw another card. 
 If they do, add the card value to their score. 
 Allow the player to continue drawing cards until their score is 21 or they go bust.
-
-
 ```
+
 #### ANSWER
 [Blackjack](blackjack.py)
