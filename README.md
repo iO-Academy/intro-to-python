@@ -58,6 +58,7 @@
   - [list](https://www.w3schools.com/python/python_lists_methods.asp)
     - Access a single value: ``` names[0] ```
     - Access a value form the end: ``` names[-1] ```
+    - To find the index of a value: ``` names.index({value}) ```
     - Adding to end: ```names.append("sarah")```
     - Inserting at an index: ```names.insert(2, 'Felix')``` - inserts into index 2 and shunts values up
     - Append elements from one to another: ```names.extend(othernames)``` - can be a list, set, dict, tuple
@@ -72,22 +73,43 @@
 
 ### EXERCISE
 ``` 
-- Output the first and last name of each person in this data, each person on a different line:
+- 1. Output the first and last name of each person in this data, each person on a different line:
 people = [{"firstname": "Mike", "lastname": "Oram"}, {"firstname": "Sarah", "lastname": "Jackson"}]
 
-- Add 7000 after 6000 is the following data:
+- 2. Add 7000 after 6000 is the following data:
 data = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 
-- Replace the first occurance of the number 20 with the number 200 from the below list:
+- 3. Replace the first occurance of the number 20 with the number 200 from the below list:
 data = [5, 10, 15, 20, 25, 50, 20]
 
-- Take the odd index items from list1 and the even index items from list2 and put them into a new list
+- 4. Take the odd index items from list1 and the even index items from list2 and put them into a new list
 list1 = [3, 6, 9, 12, 15, 18, 21]
 list2 = [4, 8, 12, 16, 20, 24, 28]
 ```
 #### ANSWER
 ```
+1. 
+print(people[0]["firstname"] + " " + people[0]["lastname"])
+print(people[1]["firstname"] + " " + people[1]["lastname"])
+# Mike Oram 
+# Sarah Jackson
 
+2.
+data[2][2].append(7000)
+# [10, 20, [300, 400, [5000, 6000, 7000], 500], 30, 40]
+
+3.
+index = data.index(20)
+data[index] = 200
+# [5, 10, 15, 200, 25, 50, 20]
+
+4.
+list3 = []
+odd = list1[1::2]
+even = list2[0::2]
+list3.extend(odd)
+list3.extend(even)
+# [6, 12, 18, 4, 12, 20, 28]
 ```
 
 - Operators
@@ -111,7 +133,23 @@ list2 = [4, 8, 12, 16, 20, 24, 28]
   
 ### EXERCISE
 ```
-POSTS and POLES
+Fence Calculator - Posts and Railings
+Create a script that can:
+1) Calculate how many posts and railings are needed to build a fence of a certain length
+2) Calculate the maximum length fence that can be created with any amount of posts and railings
+
+Fences must meet the following spec:
+A fence must consist of atleast 2 posts and 1 railing
+Every railing must have a post before and after it
+Posts cannot be place next to each other
+Posts are 0.1m wide
+Railings are 1.5m wide
+When given a length, the calculator must create a fence that spans atleast that length
+
+Stretch goals:
+Display how many spare posts/railings there are when calculating the fence length
+Display the overshoot when calculating how many posts and railings are needed for a fence length
+
 ```
 #### ANSWER
 ```
@@ -119,32 +157,34 @@ import math
 
 calcType = input('What kind of calculation do you want to do?'
                  '\n[1] Calculate the length of a fence'
-                 '\n[2] Calculate how many posts and poles you will need\n')
+                 '\n[2] Calculate how many posts and railings you will need\n')
 
 print(calcType)
 
 POST_LENGTH = 0.1
-POLE_LENGTH = 1.5
+RAILING_LENGTH = 1.5
 
 if calcType == "1":
     posts = input('How many posts do you have?\n')
-    poles = input('How many poles do you have?\n')
+    railings = input('How many railings do you have?\n')
 
-    if posts > poles:
-        fenceLength = round((int(poles) * (POST_LENGTH + POLE_LENGTH)) + POST_LENGTH, 0)
+    if posts > railings:
+        fenceLength = round((int(railings) * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 0)
+        # You have to round as float maths is weird
     else:
-        fenceLength = round(((int(posts)-1) * (POST_LENGTH + POLE_LENGTH)) + POST_LENGTH, 0)
+        fenceLength = round(((int(railings)-1) * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 0)
+        # You have to round as float maths is weird
     print('Your fence will be: ' + str(fenceLength) + 'm')
 
 elif calcType == "2":
     fenceLength = float(input('How Long does your fence need to be?\n'))
 
-    if fenceLength < (POST_LENGTH + POLE_LENGTH + POST_LENGTH):
+    if fenceLength < (POST_LENGTH + RAILING_LENGTH + POST_LENGTH):
         print("Fence must be over 1.6m")
     else:
-        poles = math.ceil((fenceLength - POST_LENGTH) / POLE_LENGTH)
-        posts = poles + 1
-        print("You will need " + str(poles) + " poles and " + str(posts) + " posts")
+        railings = math.ceil((fenceLength - POST_LENGTH) / RAILING_LENGTH)
+        posts = railings + 1
+        print("You will need " + str(railings) + " railings and " + str(posts) + " posts")
 
 else:
     print("Invalid option")
