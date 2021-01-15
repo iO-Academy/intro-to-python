@@ -394,10 +394,16 @@ def get_person_by_id(person_id):
 import module
 
 people = module.get_people_by_company('Babbleblab')
-print(people)
+print(people) 
+# [
+# (49, 'Marya', 'Behling', 'mbehling1c@npr.org', 'Babbleblab'), 
+# (63, 'Cirstoforo', 'Wainer', 'cwainer1q@is.gd', 'Babbleblab'), 
+# (73, 'Leigh', 'Werrilow', 'lwerrilow20@nsw.gov.au', 'Babbleblab')
+# ]
+
 
 person = module.get_person_by_id(65)
-print(person)
+print(person) # (65, 'Daisy', 'Gravenall', 'dgravenall1s@twitpic.com', 'Thoughtbeat')
 ```
 
 - OO Python
