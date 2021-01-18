@@ -129,7 +129,7 @@ list3.extend(even)
   - Math: ```+ - * / % ** (Exponential) // (floor division)```
     - There alot more Math functions in the [Math module](https://www.w3schools.com/python/module_math.asp) and some [built into Python core](https://www.w3schools.com/python/python_math.asp)
   - Assignment: ```= += -= *= /=```
-  - Comparison: ```== != > < >= <=```
+  - Comparison: ```== != > < >= <= in```
   - Logical: ```and, or, not - not(x < 5 and x < 10)```
   
 
@@ -268,6 +268,27 @@ for number in range(1, 100):
   import services.example as example # alias to make using it easier
   ```
   - Generally architectures are applied by frameworks, for most scripts try to build all functions into a module, grouping similar functions the import those modules when needed
+
+### EXERCISE
+```
+Create a function in a module that can take an unlimited amount of numbers 
+and return the sum of those numbers, excluding negative numbers and numbers 
+over 100.
+``` 
+
+#### ANSWER
+```
+def sum_positive(*numbers):
+    filtered = []
+    for number in numbers:
+        if number > 0 and number <= 100:
+            filtered.append(number)
+    return sum(filtered)
+
+# a better solution, students cant do yet:
+def sum_positive(*numbers):
+    return sum(filter(lambda a: a <= 100, filter(lambda a: a > 0, numbers)))
+```
 
 - Sorting
   - `sort()` method of a list will sort ascending or alphabetically
