@@ -68,7 +68,7 @@ list2 = [4, 8, 12, 16, 20, 24, 28]
     - [Python core](https://www.w3schools.com/python/python_math.asp)
     - [Math module](https://www.w3schools.com/python/module_math.asp) 
   - Assignment: ```= += -= *= /=```
-  - Comparison: ```== != > < >= <=```
+  - Comparison: ```== != > < >= <= in```
   - Logical: ```and, or, not```
 
 - Conditionals
@@ -126,7 +126,14 @@ For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the
   - importing
   - aliasing
   - importing parts of a module
-  
+ 
+### EXERCISE
+```
+Create a function in a module that can take an unlimited amount of numbers 
+and return the sum of those numbers, excluding negative numbers and numbers 
+over 100.
+``` 
+ 
  - [Sorting](https://www.w3schools.com/python/python_lists_sort.asp)
  - [Filtering](https://www.w3schools.com/python/ref_func_filter.asp)
 
