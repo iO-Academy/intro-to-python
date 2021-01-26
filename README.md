@@ -61,6 +61,9 @@ data = [5, 10, 15, 20, 25, 50, 20]
 - 4. Take the odd index items from list1 and the even index items from list2 and put them into a new list
 list1 = [3, 6, 9, 12, 15, 18, 21]
 list2 = [4, 8, 12, 16, 20, 24, 28]
+
+- 5. Stretch goal: add the list ["h", "i", "j"] after the "g" in the sub list of the following data:
+list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
 ```
   
 - Operators
