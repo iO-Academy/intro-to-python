@@ -168,8 +168,6 @@ Display the overshoot when calculating how many posts and railings are needed fo
 
 #### ANSWER
 ```
-import math
-
 calcType = input('What kind of calculation do you want to do?'
                  '\n[1] Calculate the length of a fence'
                  '\n[2] Calculate how many posts and railings you will need\n')
@@ -197,7 +195,7 @@ elif calcType == "2":
     if fenceLength < (POST_LENGTH + RAILING_LENGTH + POST_LENGTH):
         print("Fence must be over 1.6m")
     else:
-        railings = math.ceil((fenceLength - POST_LENGTH) / RAILING_LENGTH)
+        railings = int((fenceLength - POST_LENGTH) / RAILING_LENGTH) + 1
         posts = railings + 1
         print("You will need " + str(railings) + " railings and " + str(posts) + " posts")
 
