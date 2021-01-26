@@ -75,7 +75,9 @@ print(name + ' will be ' + str(int(age)+1) + ' years old next year')
     - Adding to end: ```names.append("sarah")```
     - Inserting at an index: ```names.insert(2, 'Felix')``` - inserts into index 2 and shunts values up
     - Append elements from one to another: ```names.extend(othernames)``` - can be a list, set, dict, tuple
-    - Removing items: ```names.pop()``` - optional key argument. ```namess.remove("sarah") - remove first occurance of value
+    - Removing items:  
+    ```names.pop()``` - optional key argument  
+    ```names.remove("sarah")``` - remove first occurance of value  
     - Slicing
       - Slicing follows this rule: `list[start:stop:step]`
       - Omit any of the 3 to use their default: start = 0, stop: last element, step = 1
