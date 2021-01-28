@@ -178,14 +178,14 @@ POST_LENGTH = 0.1
 RAILING_LENGTH = 1.5
 
 if calcType == "1":
-    posts = input('How many posts do you have?\n')
-    railings = input('How many railings do you have?\n')
+    posts = int(input('How many posts do you have?\n'))
+    railings = int(input('How many railings do you have?\n'))
 
     if posts > railings:
-        fenceLength = round((int(railings) * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 0)
+        fenceLength = round((railings * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 1)
         # You have to round as float maths is weird
     else:
-        fenceLength = round(((int(railings)-1) * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 0)
+        fenceLength = round(((posts-1) * (POST_LENGTH + RAILING_LENGTH)) + POST_LENGTH, 1)
         # You have to round as float maths is weird
     print('Your fence will be: ' + str(fenceLength) + 'm')
 
