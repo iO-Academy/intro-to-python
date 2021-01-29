@@ -213,7 +213,7 @@ You must output the cards drawn by each player.
 No card can be drawn more than once.
 
 Stretch goal:
-If the players score is under 21, ask them if they would like to draw another card. 
+If the players score is under 14, ask them if they would like to draw another card. 
 If they do, add the card value to their score. 
 Allow the player to continue drawing cards until their score is 21 or they go bust.
 ```
