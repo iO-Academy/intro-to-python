@@ -2,6 +2,8 @@
 
 ### Prep
 - Make sure you have Python 3 installed (I will be using Python 3.9.6)
+  - Windows can [install it here](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe)
+  - Mac I suggest using [Homebrew](https://brew.sh/)
 - Ensure you have a SQL (Mysql or MSSQL) database running
   - There is a [MSSQL Docker container](https://github.com/iO-Academy/intro-to-python/tree/docker) here for ease
 
