@@ -7,7 +7,7 @@ https://www.docker.com/products/docker-desktop
 Clone this repo and checkout this branch
 
 #### Step 2:
-Move the `docker-compose.yml` file to where ever your python application files are
+Move the `docker-compose.yml` file to where ever your python application files are or where you would like them to be
 
 #### Step 3:
 Run `docker-compose up` from that folder on the command line
