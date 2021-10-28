@@ -1,5 +1,12 @@
 # Intro to Python
 
+### Prep
+- Make sure you have Python 3 installed (I will be using Python 3.9.6)
+- Ensure you have a SQL (Mysql or MSSQL) database running
+  - There is a [MSSQL Docker container](https://github.com/iO-Academy/intro-to-python/tree/docker) here for ease
+
+## Programme
+
 - What is Python?
   - Syntax
   - Modules
@@ -13,7 +20,7 @@
   - Generally lowercase with underscores
 
 - User input
-  ```
+  ```python3
   data = input("Message to prompt user")
   ```
 
@@ -22,7 +29,7 @@
     - Concatenating
     - Casting
 ### EXERCISE
-```
+```python3
 Write a script that asks the user for their name and age as 2 separate questions. 
 Then print the following string with the correct data:
 {name} will be {age} years old next year
@@ -123,6 +130,7 @@ For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the
   - return
   - Lambda
   - Scope
+  - Type Hinting
   
 - Modules
   - What are they?
@@ -141,8 +149,8 @@ over 100.
  - [Filtering](https://www.w3schools.com/python/ref_func_filter.asp)
 
 ### EXERCISE
-```
-Output the names of the adults (18 and over) in age order (ASC):
+```python3
+# Output the names of the adults (18 and over) in age order (ASC):
 people = [
     {"name": "Mike", "age": 28},
     {"name": "Jenny", "age": 12},
