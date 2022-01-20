@@ -4,8 +4,6 @@
 - Make sure you have Python 3 installed (I will be using Python 3.9.6)
   - Windows can [install it here](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe)
   - Mac I suggest using [Homebrew](https://brew.sh/)
-- Ensure you have a SQL (Mysql or MSSQL) database running
-  - There is a [MSSQL Docker container](https://github.com/iO-Academy/intro-to-python/tree/docker) here for ease
 
 ## Programme
 
@@ -167,34 +165,17 @@ people = [
   - How to [find packages](https://pypi.org)
   - How to pick packages
   
-- Working with files
+- Working with files: [Pandas](https://pandas.pydata.org/)
   - Opening files
+    - `pd.read_*('file')`
   - Reading data
+  - Summary statistics
+  - Filtering data
+  - Sorting data
   - Writing data
-  - Closing files
-  - Working with CSVs
 
-- MSSQL
-  - Connecting - `pyodbc`
-  - Cursor
-  - Running queries
-    - fetchall
-    - fetchone
-  - Prepared statements
-  - Running mulitple queries
-  
 ### EXERCISE
-Use [this database](people.sql)
-```
-Create a module with the following functions:
-- get_people_by_company
-- get_person_by_id
-Each function should query the database using the function parameter, and return the data
-
-Use your functions to find:
-- All the people who work for Babbleblab
-- The person with id 65
-```
+TBC
 
 - OO Python
   - What is OO?
