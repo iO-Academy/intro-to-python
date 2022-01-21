@@ -365,6 +365,7 @@ for adult in adults:
   pip install [package]
   pip list
   ```
+  You may need to use `pip3` instead of `pip`
   
 - Working with files
   - You can work with text and binary files, we will just be working with text files
