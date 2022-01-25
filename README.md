@@ -366,7 +366,126 @@ for adult in adults:
   pip list
   ```
   You may need to use `pip3` instead of `pip`
-  
+
+
+- Pandas
+  - Reading files
+  ```python
+  titanic = pd.read_csv("titanic.csv")
+  # can also read direct from excel
+  pd.read_xls()
+  ```
+    - This creates a dataframe - a Pandas data type
+  - Accessing data in a data frame:
+  ```python
+  titanic.head(8) # first 8 rows
+  titanic.tail(8) # last 8 rows
+  titanic.info() # technical summary
+  titanic["Age"] # returns a Series - a single row of data with indexes
+  ```
+  - Summary statistics
+    - Methods can be called directly on a series to summarise the data
+    ```python
+    titanic["Age"].mean()
+    ```
+    - Can do this to multiple columns at once using list access syntax (unique to pandas)
+    ```python
+    titanic[["Age", "Fare"]].median()
+    ```
+    - For general statistical overview of data you can use `.describe()`
+    ```python
+    titanic[["Age", "Fare"]].describe()
+    ```
+    - You can group by column data to get statistics about grouped data:
+    ```python
+    titanic[["Sex", "Age"]].groupby("Sex").mean() # cannot group by a column not selected
+    ```
+    - You can also count rows in a category
+    ```python
+    titanic["Sex"].value_counts()
+    ```
+  - Filtering
+    - Unlike with a normal list, pandas allows you to filter with a condition in the index
+    ```python
+    above_35s = titanic[titanic["Age"] > 35] # this returns a data frame that you can then access
+    above_35s["Name"].head()
+    ```
+    - You can also filter by multiple values using `isin`:
+    ```python
+    class_23 = titanic[titanic["Pclass"].isin([2, 3])]
+    print(class_23.head())
+    # class_23.count() to get totals per column
+    ```
+    - To filter to rows with non-null columns:
+    ```python
+    age_no_na = titanic[titanic["Age"].notna()]
+    print(age_no_na.head())
+    ```
+    - To filter both rows and columns you have to use `.loc`
+    - `.loc` takes 2 arguments, the first is the row filter, the second is the column filter
+    ```python
+    adult_names = titanic.loc[titanic["Age"] > 35, "Name"]
+    ```
+    - You can also use `.iloc` to find rows/columns by number
+    ```python
+    titanic.iloc[9:25, 2:5] # 9:25 is rows 10-25, 2:5 is columns 3-5, works like start, stop, step
+    ```
+    - Both `.loc` and `.iloc` can be used to change values
+    ```python
+    titanic.iloc[9:10, 2:3] = 'RAAA'
+    ```
+  - Sorting
+    - You can sort by any column:
+    ```python
+    titanic.sort_values(by="Age")
+    ```
+    - You can also sort by a combination of columns and change the sort order:
+    ```python
+    titanic.sort_values(by=['Pclass', 'Age'], ascending=False)
+    ```
+  - Writing data
+    - You can output to CSV or excel using `to_*`:
+    ```python
+    titanic.to_csv(index=False)
+    titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
+    ```
+- EXERCISE:
+```python
+people = pd.read_csv('exercise-data.csv')
+
+# Find first and last name of row 205
+row205 = people.iloc[205:206, 0:2]
+print(row205) # 205  Georgianne Pahl
+
+# Find the favourite color of the person with email `lbowdery5e@google.com.hk`
+person = people.loc[people['email'] == 'lbowdery5e@google.com.hk', "f_color"]
+print(person) # 194    Teal
+
+# Find the most popular favourite colour
+fcolor = people['f_color'].mode()
+print(fcolor) # Purple
+
+# Find the oldest persons dob
+print(people.sort_values(by="dob").head(1)["dob"]) # 35    1990-01-08
+
+# How many people who have the favourite colour of `Yellow` have an email address
+print(people[people["f_color"] == 'Yellow']['email'].count()) # 36
+
+# Create an excel file that lists all colors and how many people have each as a favourite
+colors = people.groupby("f_color").count()["first_name"]
+colors.to_excel("colors.xlsx") # this is
+
+# this line allows you to rename the column and sort the data, not required but handy.
+# filtering to a single column returns a Series, not a DataFrame, so you have to reset_index()
+# excel = colors.reset_index().rename(columns={"first_name":"count"}).sort_values(by="count", ascending=False)
+# print(excel)
+
+# this line may throw an error about a missing package, just install it: pip3 install openpyxl
+# excel.to_excel("colors.xlsx", sheet_name="people colors")
+```
+
+
+
 - Working with files
   - You can work with text and binary files, we will just be working with text files
   - `file = open("example.txt")` will open a file resource
