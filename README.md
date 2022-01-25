@@ -175,6 +175,7 @@ people = [
   - Writing data
 
 ### EXERCISE
+[Exercise data](https://github.com/iO-Academy/intro-to-python/blob/main/pandas-data.csv)  
 ```
 Using the supplied exercise data:
 - Find first and last name of row 205
