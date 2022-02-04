@@ -473,12 +473,16 @@ print(people[people["f_color"] == 'Yellow']['email'].count()) # 36
 
 # Create an excel file that lists all colors and how many people have each as a favourite
 colors = people.groupby("f_color").count()["first_name"]
-colors.to_excel("colors.xlsx") # this is
+colors.to_excel("colors.xlsx")
 
 # this line allows you to rename the column and sort the data, not required but handy.
 # filtering to a single column returns a Series, not a DataFrame, so you have to reset_index()
 # excel = colors.reset_index().rename(columns={"first_name":"count"}).sort_values(by="count", ascending=False)
 # print(excel)
+
+# An alternative to the above could be
+colors = people['f_color'].value_counts() # this give you it in descending order already, so does not need sorting
+colors = colors.reset_index().rename(columns={"index":"color","f_color":"count"}) # you may still want to rename the columns though
 
 # this line may throw an error about a missing package, just install it: pip3 install openpyxl
 # excel.to_excel("colors.xlsx", sheet_name="people colors")
