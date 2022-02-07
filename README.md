@@ -61,8 +61,6 @@ print(name + ' will be ' + str(int(age)+1) + ' years old next year')
         - ```names = ['mike', 'charlie', 'ash']```
       - Tuple: ordered, unchangeable, 0 indexed, allows dups
         - ```names = ('mike', 'charlie', 'ash')``` 
-      - Set: unordered, unindexed, unchangeable, no dups, *can add new items*, can make immutable with `frozenset()`
-        - ```names = {'mike', 'charlie', 'ash'}```
       - Dictionary: unordered, changeable, no dup keys
         - ```person =	{"name": "Mike", "age": 28, "location": "Bath"}``` 
         
