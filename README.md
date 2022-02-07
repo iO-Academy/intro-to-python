@@ -39,8 +39,6 @@ Then print the following string with the correct data:
       - ```names = ['mike', 'charlie', 'ash']```
     - Tuple
         - ```names = ('mike', 'charlie', 'ash')``` 
-    - Set: can make immutable with `frozenset()`
-        - ```names = {'mike', 'charlie', 'ash'}```
     - Dictionary
         - ```person =	{"name": "Mike", "age": 28, "location": "Bath"}``` 
 
@@ -91,8 +89,8 @@ list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
 ```
 Fence Calculator - Posts and Railings
 Create a script that can:
-1) Calculate how many posts and railings are needed to build a fence of a certain length
-2) Calculate the maximum length fence that can be created with any amount of posts and railings
+1) Calculate the maximum length fence that can be created with any amount of posts and railings
+2) Calculate how many posts and railings are needed to build a fence of a certain length
 
 Fences must meet the following spec:
 A fence must consist of atleast 2 posts and 1 railing
