@@ -193,7 +193,10 @@ elif calcType == "2":
     if fenceLength < (POST_LENGTH + RAILING_LENGTH + POST_LENGTH):
         print("Fence must be over 1.6m")
     else:
-        railings = int((fenceLength - POST_LENGTH) / RAILING_LENGTH) + 1
+        if int(round(fenceLength - POST_LENGTH, 1) % (POST_LENGTH + RAILING_LENGTH)) == 0:
+            railings = int((fenceLength - POST_LENGTH) / RAILING_LENGTH)
+        else:
+            railings = int((fenceLength - POST_LENGTH) // RAILING_LENGTH) + 1
         posts = railings + 1
         print("You will need " + str(railings) + " railings and " + str(posts) + " posts")
 
