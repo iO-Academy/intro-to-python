@@ -431,6 +431,10 @@ for adult in adults:
     ```python
     titanic.iloc[9:25, 2:5] # 9:25 is rows 9-24, 2:5 is columns 2-4, works like start, stop, step
     ```
+      - Also possible to easily get all rows, but only specific columns
+      ```python
+      titanic.iloc[:, 2:5] # : uses defaults (just like start, stop, step) of start/end
+      ```
     - Both `.loc` and `.iloc` can be used to change values
     ```python
     titanic.iloc[9:10, 2:3] = 'RAAA'
