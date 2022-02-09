@@ -451,9 +451,12 @@ for adult in adults:
   - Writing data
     - You can output to CSV or excel using `to_*`:
     ```python
-    titanic.to_csv(index=False)
+    titanic.to_csv("newtitanic.csc", index=False)
     titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
     ```
+      - Note that doing this inserts a new column containing the index assigned to each row by Pandas. `index=False` fixes this issue
+      - Also possible to keep the index by giving it a column name using `index_label="title"`
+        - This isn't an issue when using excel
 - EXERCISE:
 ```python
 people = pd.read_csv('exercise-data.csv')
