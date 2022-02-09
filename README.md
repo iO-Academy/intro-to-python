@@ -429,7 +429,7 @@ for adult in adults:
     ```
     - You can also use `.iloc` to find rows/columns by number
     ```python
-    titanic.iloc[9:25, 2:5] # 9:25 is rows 10-25, 2:5 is columns 3-5, works like start, stop, step
+    titanic.iloc[9:25, 2:5] # 9:25 is rows 9-24, 2:5 is columns 2-4, works like start, stop, step
     ```
     - Both `.loc` and `.iloc` can be used to change values
     ```python
