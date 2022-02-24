@@ -260,6 +260,27 @@ for number in range(1, 101):
     - global variables inherit from call
   - https://www.w3schools.com/python/python_variables_global.asp
 
+### EXERCISE
+```
+Create a function that can take an unlimited amount of numbers 
+and return the sum of those numbers, excluding negative numbers and numbers 
+over 100.
+``` 
+
+#### ANSWER
+```python
+def sum_positive(*numbers):
+    filtered = []
+    for number in numbers:
+        if number > 0 and number <= 100:
+            filtered.append(number)
+    return sum(filtered)
+
+# a better solution, students cant do yet:
+def sum_positive(*numbers):
+    return sum(filter(lambda a: a <= 100, filter(lambda a: a > 0, numbers)))
+```
+
 - Modules
   - Import files into your code to achieve better separation
   ```
@@ -272,23 +293,24 @@ for number in range(1, 101):
 
 ### EXERCISE
 ```
-Create a function in a module that can take an unlimited amount of numbers 
-and return the sum of those numbers, excluding negative numbers and numbers 
-over 100.
+Move the previous exercise's function into a module and use it from your main file.
 ``` 
 
 #### ANSWER
-```
+```Python
+# <module.py>
 def sum_positive(*numbers):
     filtered = []
     for number in numbers:
         if number > 0 and number <= 100:
             filtered.append(number)
     return sum(filtered)
+    
+    
+# <main.py>
+import module
 
-# a better solution, students cant do yet:
-def sum_positive(*numbers):
-    return sum(filter(lambda a: a <= 100, filter(lambda a: a > 0, numbers)))
+result = module.sum_positive(5,7,-4,101)
 ```
 
 - Sorting
