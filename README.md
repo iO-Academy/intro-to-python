@@ -129,7 +129,14 @@ For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the
   - Lambda
   - Scope
   - Type Hinting
-  
+
+### EXERCISE
+```
+Create a function that can take an unlimited amount of numbers 
+and return the sum of those numbers, excluding negative numbers and numbers 
+over 100.
+``` 
+
 - Modules
   - What are they?
   - importing
@@ -138,9 +145,7 @@ For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the
  
 ### EXERCISE
 ```
-Create a function in a module that can take an unlimited amount of numbers 
-and return the sum of those numbers, excluding negative numbers and numbers 
-over 100.
+Move the previous exercise's function into a module and use it from your main file.
 ``` 
  
  - [Sorting](https://www.w3schools.com/python/python_lists_sort.asp)
