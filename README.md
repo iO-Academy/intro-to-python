@@ -123,6 +123,14 @@ even = list2[0::2]
 list3.extend(odd)
 list3.extend(even)
 # [6, 12, 18, 4, 12, 20, 28]
+
+5.
+list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
+list2 = ["h", "i", "j"]
+
+list1[2][1][2].extend(list2)
+
+print(list1)
 ```
 
 - Operators
