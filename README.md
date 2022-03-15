@@ -172,6 +172,22 @@ Display how many spare posts/railings there are when calculating the fence lengt
 Display the overshoot when calculating how many posts and railings are needed for a fence length
 ```
 
+<details>
+  <summary>If you need even more stretch goals...</summary>
+  
+  ```
+  Posts are 1m tall
+
+  When calculating the length of a fence based on the amount of posts and rails, 
+  add a third question of how tall the fence should be. only allow the user to 
+  enter 1, 2 or 3m, and then calculate the new length of the fence based on the height given
+
+  when calculating how many posts and railings are needed to build a fence, ask 
+  the desired height of the fence, again only allowing heights of 1, 2 or 3m, 
+  and provide the amount of posts/railings needed for that fence
+  ```
+</details>
+
 #### ANSWER
 ```
 calcType = input('What kind of calculation do you want to do?'
