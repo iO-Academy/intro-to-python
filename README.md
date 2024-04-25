@@ -186,7 +186,7 @@ Using the supplied exercise data:
 - Find the most popular favourite colour
 - Find the oldest persons dob
 - How many people who have the favourite colour of `Yellow` have an email address
-- Create an excel file that lists all colors and how many people have each as a favourite
+- Create a csv file that lists all colors and how many people have each as a favourite
 ```
 
 - OO Python
