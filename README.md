@@ -1,7 +1,7 @@
 # Intro to Python
 
 ### Prep
-- Make sure you have Python 3 installed (I will be using Python 3.9.6)
+- Make sure you have Python 3 installed
   - Windows can [install it here](https://www.python.org/ftp/python/3.9.6/python-3.9.6-amd64.exe)
   - Mac I suggest using [Homebrew](https://brew.sh/)
 
