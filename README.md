@@ -189,10 +189,6 @@ Using the supplied exercise data:
 - Create a csv file that lists all colors and how many people have each as a favourite
 ```
 
-- OO Python
-  - What is OO?
-  - What is a class?
-  - Syntax
   
 Additional reading:
   - [W3Schools](https://www.w3schools.com/python/default.asp)
